@@ -3,6 +3,8 @@ package com.mamoon.project.airBnbApp.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,8 +30,10 @@ public class Hotel {
     @Column(columnDefinition = "TEXT[]")
     private String[] amenities;
 
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     @Embedded
